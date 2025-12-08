@@ -8,25 +8,34 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            colors: {
+                ozunlu: {
+                    50: '#f2f2f2',
+                    100: '#e6e6e6',
+                    200: '#cccccc',
+                    300: '#b3b3b3',
+                    400: '#999999',
+                    500: '#808080',
+                    600: '#666666',
+                    700: '#4d4d4d',
+                    800: '#333333',
+                    900: '#1a1a1a',
+                    950: '#0d0d0d',
+                },
+                primary: {
+                    DEFAULT: '#FFA500', // Safety Orange / Industrial Yellow
+                    foreground: '#000000',
+                },
+                secondary: {
+                    DEFAULT: '#333333', // Dark Industrial Gray
+                    foreground: '#FFFFFF',
+                }
+            },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'industrial-dark': 'linear-gradient(to bottom, #1a1a1a, #0d0d0d)',
             },
-            colors: {
-                primary: {
-                    50: '#f0f9ff',
-                    100: '#e0f2fe',
-                    200: '#bae6fd',
-                    300: '#7dd3fc',
-                    400: '#38bdf8',
-                    500: '#0ea5e9',
-                    600: '#0284c7',
-                    700: '#0369a1',
-                    800: '#075985',
-                    900: '#0c4a6e',
-                }
-            }
         },
     },
     plugins: [],
