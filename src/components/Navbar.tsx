@@ -1,16 +1,25 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [lang, setLang] = useState('TR');
+    const [isDark, setIsDark] = useState(true);
 
     useEffect(() => {
+        // Initial check or preference logic could go here
+        if (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) {
+            setIsDark(true);
+        } else {
+            setIsDark(false);
+        }
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
@@ -18,6 +27,16 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const toggleTheme = () => {
+        if (isDark) {
+            document.documentElement.classList.remove('dark');
+            setIsDark(false);
+        } else {
+            document.documentElement.classList.add('dark');
+            setIsDark(true);
+        }
+    };
 
     const navLinks = [
         { href: "/kurumsal", label: "KURUMSAL" },
@@ -57,6 +76,35 @@ export default function Navbar() {
                     {navLinks.map((link) => (
                         <NavLink key={link.href} href={link.href} label={link.label} />
                     ))}
+
+                    {/* Language & Theme Controls */}
+                    <div className="flex items-center gap-4 border-l border-white/20 pl-6 ml-2">
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={toggleTheme}
+                            className="text-gray-400 hover:text-primary transition-colors"
+                        >
+                            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                        </button>
+
+                        {/* Language */}
+                        <div className="flex items-center gap-2">
+                            <Globe size={16} className="text-primary" />
+                            <button
+                                onClick={() => setLang('TR')}
+                                className={`text-xs font-bold transition-colors ${lang === 'TR' ? 'text-white' : 'text-gray-500 hover:text-white'}`}
+                            >
+                                TR
+                            </button>
+                            <span className="text-gray-600 text-[10px]">|</span>
+                            <button
+                                onClick={() => setLang('EN')}
+                                className={`text-xs font-bold transition-colors ${lang === 'EN' ? 'text-white' : 'text-gray-500 hover:text-white'}`}
+                            >
+                                EN
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -87,6 +135,33 @@ export default function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
+
+                            <div className="flex flex-col items-center gap-6 mt-8 pt-8 border-t border-white/10 w-full">
+                                {/* Theme Toggle Mobile */}
+                                <button
+                                    onClick={toggleTheme}
+                                    className="flex items-center gap-2 text-white bg-white/10 px-6 py-2 rounded-full"
+                                >
+                                    {isDark ? <><Sun size={20} /> Aydınlık Mod</> : <><Moon size={20} /> Karanlık Mod</>}
+                                </button>
+
+                                {/* Language Mobile */}
+                                <div className="flex items-center gap-4">
+                                    <button
+                                        onClick={() => setLang('TR')}
+                                        className={`text-xl font-black ${lang === 'TR' ? 'text-primary' : 'text-gray-500'}`}
+                                    >
+                                        TR
+                                    </button>
+                                    <span className="text-gray-700">/</span>
+                                    <button
+                                        onClick={() => setLang('EN')}
+                                        className={`text-xl font-black ${lang === 'EN' ? 'text-primary' : 'text-gray-500'}`}
+                                    >
+                                        EN
+                                    </button>
+                                </div>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>

@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 245, 245, 245;
+}
+
+.dark {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 26, 26, 26;
-  /* ozunlu-900 */
   --background-end-rgb: 13, 13, 13;
-  /* ozunlu-950 */
 }
 
 body {
@@ -17,7 +21,6 @@ body {
       rgb(var(--background-end-rgb)));
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
-  /* Assuming Inter or similar standard font */
 }
 
 @layer utilities {
@@ -32,15 +35,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #022247;
+  /* Navy Track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFA500;
-  /* Primary Orange */
+  background: #D4AF37;
+  /* Gold Thumb */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #cc8400;
+  background: #B5952F;
+  /* Darker Gold */
 }

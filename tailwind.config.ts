@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+    darkMode: 'class',
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -23,13 +24,13 @@ const config: Config = {
                     950: '#0d0d0d',
                 },
                 primary: {
-                    DEFAULT: '#FFA500', // Safety Orange / Industrial Yellow
+                    DEFAULT: '#D4AF37', // Premium Gold
                     foreground: '#000000',
                 },
                 secondary: {
-                    DEFAULT: '#333333', // Dark Industrial Gray
+                    DEFAULT: '#022247', // Deep Navy Blue
                     foreground: '#FFFFFF',
-                }
+                },
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
