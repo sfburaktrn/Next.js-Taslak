@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,16 +32,24 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || mobileMenuOpen
-                    ? "bg-ozunlu-950/90 backdrop-blur-md shadow-lg border-b border-white/10 py-4"
-                    : "bg-transparent py-6"
+                ? "bg-ozunlu-950/90 backdrop-blur-md shadow-lg border-b border-white/10 py-4"
+                : "bg-transparent py-6"
                 }`}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 <Link
                     href="/"
-                    className="text-2xl md:text-3xl font-black tracking-tighter text-white z-50"
+                    className="relative z-50 transition-transform hover:scale-105"
                 >
-                    ÖZÜNLÜ
+                    <div className="relative w-40 h-10 md:w-48 md:h-12">
+                        <Image
+                            src="/ozunlu-logo.png"
+                            alt="Özünlü Damper Logo"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
                 </Link>
 
                 {/* Desktop Menu */}

@@ -16,11 +16,12 @@ export default function LeaderMessage() {
                         className="w-full md:w-1/2 relative"
                     >
                         <div className="relative aspect-[3/4] md:aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                            {/* Mock Image Placeholder using a colored div for now if no real image */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-gray-700 to-gray-400" />
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-2xl">
-                                UFUK ÖZÜNLÜ FOTOĞRAFI
-                            </div>
+                            <Image
+                                src="/ufuk-ozunlu.jpg"
+                                alt="Ufuk Özünlü"
+                                fill
+                                className="object-cover object-top"
+                            />
                         </div>
                         {/* Decorative elements */}
                         <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
