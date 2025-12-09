@@ -1,5 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import StatsCounter from '@/components/home/StatsCounter';
+import PartnersSlider from '@/components/home/PartnersSlider';
 import NewsFeed from '@/components/home/NewsFeed';
 import MapPreview from '@/components/home/MapPreview';
 
@@ -8,6 +9,7 @@ export default function Home() {
         <main className="flex min-h-screen flex-col bg-ozunlu-950">
             <HeroSection />
             <StatsCounter />
+            <PartnersSlider />
             <NewsFeed />
             <MapPreview />
         </main>

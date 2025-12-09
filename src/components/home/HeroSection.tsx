@@ -1,22 +1,24 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function HeroSection() {
+    const { scrollY } = useScroll();
+
     return (
         <div className="relative h-screen w-full overflow-hidden bg-ozunlu-950">
-            {/* Video Background Mockup - In real app, use <video> tag */}
+            {/* Video Background */}
             <div className="absolute inset-0 z-0">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="h-full w-full object-cover opacity-40 mix-blend-overlay"
+                    className="h-full w-full object-cover opacity-60"
                 >
-                    <source src="/placeholder-industrial-video.mp4" type="video/mp4" />
+                    <source src="/banner-video.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-ozunlu-950 via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}
@@ -56,15 +58,26 @@ export default function HeroSection() {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Scroll Indicator - Mouse Animation */}
             <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer"
+                style={{ opacity: useTransform(scrollY, [0, 200], [1, 0]) }}
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
-                <div className="h-12 w-8 border-2 border-white/20 rounded-full flex justify-center p-2">
-                    <div className="w-1 h-3 bg-primary rounded-full" />
+                <div className="w-[30px] h-[50px] rounded-[15px] border-[2px] border-white/30 flex justify-center p-2">
+                    <motion.div
+                        animate={{
+                            y: [0, 12, 0],
+                        }}
+                        transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                        className="w-1 h-3 bg-white rounded-full"
+                    />
                 </div>
+                <p className="text-white/50 text-xs uppercase tracking-widest mt-4 font-semibold animate-pulse">Kaydır</p>
             </motion.div>
         </div>
     );

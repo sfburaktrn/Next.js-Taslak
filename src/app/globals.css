@@ -35,17 +35,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #022247;
-  /* Navy Track */
+  background: #000000;
+  /* Black Track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  /* Gold Thumb */
+  background: #333333;
+  /* Dark Gray Thumb */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B5952F;
-  /* Darker Gold */
+  background: #4d4d4d;
+  /* Lighter Black */
 }
