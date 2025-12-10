@@ -1,6 +1,8 @@
 import HeroSection from '@/components/home/HeroSection';
 import StatsCounter from '@/components/home/StatsCounter';
 import PartnersSlider from '@/components/home/PartnersSlider';
+import AboutSection from '@/components/home/AboutSection';
+import ProductsSection from '@/components/home/ProductsSection';
 import NewsFeed from '@/components/home/NewsFeed';
 import MapPreview from '@/components/home/MapPreview';
 
@@ -10,6 +12,8 @@ export default function Home() {
             <HeroSection />
             <StatsCounter />
             <PartnersSlider />
+            <AboutSection />
+            <ProductsSection />
             <NewsFeed />
             <MapPreview />
         </main>
