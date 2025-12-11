@@ -28,6 +28,16 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Lock body scroll when the mobile menu is open to prevent background scrolling.
+    useEffect(() => {
+        if (typeof document === "undefined") return;
+        const originalOverflow = document.body.style.overflow;
+        document.body.style.overflow = mobileMenuOpen ? "hidden" : originalOverflow || "";
+        return () => {
+            document.body.style.overflow = originalOverflow || "";
+        };
+    }, [mobileMenuOpen]);
+
     const toggleTheme = () => {
         if (isDark) {
             document.documentElement.classList.remove('dark');
@@ -50,8 +60,8 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || mobileMenuOpen
-                ? "bg-ozunlu-950/90 backdrop-blur-md shadow-lg border-b border-white/10 py-4"
+            className={`fixed top-0 left-0 w-full z-[120] transition-all duration-300 ${isScrolled || mobileMenuOpen
+                ? "bg-black backdrop-blur-md shadow-lg border-b border-white/10 py-4"
                 : "bg-transparent py-6"
                 }`}
         >
@@ -115,54 +125,103 @@ export default function Navbar() {
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
 
-                {/* Mobile Menu Overlay */}
+                {/* Mobile Menu */}
                 <AnimatePresence>
                     {mobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, x: "100%" }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: "100%" }}
-                            transition={{ type: "tween", duration: 0.3 }}
-                            className="fixed inset-0 bg-ozunlu-950 z-40 flex flex-col items-center justify-center space-y-8 lg:hidden"
-                        >
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="text-2xl font-bold text-white hover:text-primary transition-colors tracking-widest"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                        <>
+                            {/* Backdrop */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="fixed inset-0 bg-black opacity-100 z-[120] lg:hidden"
+                                onClick={() => setMobileMenuOpen(false)}
+                            />
 
-                            <div className="flex flex-col items-center gap-6 mt-8 pt-8 border-t border-white/10 w-full">
-                                {/* Theme Toggle Mobile */}
-                                <button
-                                    onClick={toggleTheme}
-                                    className="flex items-center gap-2 text-white bg-white/10 px-6 py-2 rounded-full"
-                                >
-                                    {isDark ? <><Sun size={20} /> Aydınlık Mod</> : <><Moon size={20} /> Karanlık Mod</>}
-                                </button>
-
-                                {/* Language Mobile */}
-                                <div className="flex items-center gap-4">
-                                    <button
-                                        onClick={() => setLang('TR')}
-                                        className={`text-xl font-black ${lang === 'TR' ? 'text-primary' : 'text-gray-500'}`}
+                            {/* Drawer */}
+                            <motion.aside
+                                initial={{ x: "100%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "100%" }}
+                                transition={{ type: "tween", duration: 0.3 }}
+                                className="fixed top-0 right-0 h-full w-full bg-black z-[130] lg:hidden flex flex-col"
+                            >
+                                <div className="flex items-center justify-between px-6 pt-5 pb-0 border-b border-white/10">
+                                    <Link
+                                        href="/"
+                                        className="relative w-36 h-10"
+                                        onClick={() => setMobileMenuOpen(false)}
                                     >
-                                        TR
-                                    </button>
-                                    <span className="text-gray-700">/</span>
+                                        <Image
+                                            src="/ozunlu-logo.png"
+                                            alt="Özünlü Damper Logo"
+                                            fill
+                                            className="object-contain"
+                                            priority
+                                        />
+                                    </Link>
                                     <button
-                                        onClick={() => setLang('EN')}
-                                        className={`text-xl font-black ${lang === 'EN' ? 'text-primary' : 'text-gray-500'}`}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="p-2 text-white hover:text-primary transition-colors"
+                                        aria-label="Menüyü kapat"
                                     >
-                                        EN
+                                        <X size={26} />
                                     </button>
                                 </div>
-                            </div>
-                        </motion.div>
+
+                                {/* Quick actions (theme + language) */}
+                                <div className="px-6 py-4 bg-black border-b border-white/10 flex items-center justify-between gap-4">
+                                    <button
+                                        onClick={toggleTheme}
+                                        className="flex items-center gap-2 text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
+                                    >
+                                        {isDark ? <><Sun size={18} /> Aydınlık Mod</> : <><Moon size={18} /> Karanlık Mod</>}
+                                    </button>
+                                    <div className="flex items-center gap-3 text-white">
+                                        <Globe size={18} className="text-primary" />
+                                        <div className="flex items-center gap-2">
+                                            <button
+                                                onClick={() => setLang('TR')}
+                                                className={`text-sm font-black ${lang === 'TR' ? 'text-primary' : 'text-gray-400'}`}
+                                            >
+                                                TR
+                                            </button>
+                                            <span className="text-gray-600">/</span>
+                                            <button
+                                                onClick={() => setLang('EN')}
+                                                className={`text-sm font-black ${lang === 'EN' ? 'text-primary' : 'text-gray-400'}`}
+                                            >
+                                                EN
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex-1 px-6 pt-6 pb-8 flex flex-col items-center justify-start space-y-8 bg-black">
+                                    <div className="flex flex-col items-center space-y-4 w-full">
+                                        {navLinks.map((link) => (
+                                            <Link
+                                                key={link.href}
+                                                href={link.href}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="text-xl font-bold text-white tracking-[0.08em] px-4 py-2 rounded-lg hover:text-primary transition-colors"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+
+                                    <Link
+                                        href="/iletisim"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="w-full max-w-xs text-center bg-primary text-black font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+                                    >
+                                        Teklif Al
+                                    </Link>
+                                </div>
+                            </motion.aside>
+                        </>
                     )}
                 </AnimatePresence>
             </div>
@@ -178,5 +237,5 @@ function NavLink({ href, label }: { href: string; label: string }) {
         >
             {label}
         </Link>
-    )
+    );
 }
