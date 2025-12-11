@@ -32,7 +32,7 @@ export default function VideoGallery() {
                         </span>
                         <h3 className="text-4xl font-bold text-white mb-2">Global Marka Yolculuğu</h3>
                         <p className="text-gray-300 max-w-xl text-lg mb-6">
-                            Anadolu'nun kalbinden dünyaya uzanan 45 yıllık serüvenin belgeseli.
+                            Anadolu&apos;nun kalbinden dünyaya uzanan 45 yıllık serüvenin belgeseli.
                         </p>
                         <button className="bg-white text-black px-8 py-3 rounded font-bold hover:bg-primary transition-colors flex items-center gap-2">
                             <Play size={20} className="fill-black" />

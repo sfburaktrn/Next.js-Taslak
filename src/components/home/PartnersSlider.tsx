@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 
 // Partner logos
@@ -138,9 +139,11 @@ export default function PartnersSlider() {
                             className="flex-shrink-0 relative group cursor-pointer"
                         >
                             <div className="w-[200px] h-[100px] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center p-4 transition-all duration-500 group-hover:bg-white/10 group-hover:border-primary/30 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] group-hover:-translate-y-1">
-                                <img
+                                <Image
                                     src={partner.logo}
                                     alt={partner.name}
+                                    width={200}
+                                    height={100}
                                     className="max-w-full max-h-full object-contain filter grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                                 />
                             </div>

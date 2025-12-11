@@ -40,7 +40,7 @@ export default function SuccessStories() {
                             className="bg-ozunlu-950 p-8 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-colors"
                         >
                             <div className="absolute top-0 right-0 p-4 opacity-10 font-black text-9xl text-white select-none">
-                                "
+                                &ldquo;
                             </div>
 
                             <div className="relative z-10">
@@ -50,7 +50,7 @@ export default function SuccessStories() {
                                 </div>
 
                                 <blockquote className="text-gray-300 text-lg italic mb-8 leading-relaxed">
-                                    "{story.testimonial}"
+                                    &ldquo;{story.testimonial}&rdquo;
                                 </blockquote>
 
                                 <div className="flex items-center justify-between pt-6 border-t border-white/10">

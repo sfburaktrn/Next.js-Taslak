@@ -23,7 +23,7 @@ export default function GreenReport() {
                     <div className="w-full md:w-1/2">
                         <p className="text-lg text-gray-300 leading-relaxed">
                             Ağır sanayi, ağır sorumluluk gerektirir. Biz sadece çelik işlemiyoruz;
-                            gelecek nesillere yaşanabilir bir dünya bırakmak için "Yeşil Üretim"
+                            gelecek nesillere yaşanabilir bir dünya bırakmak için &quot;Yeşil Üretim&quot;
                             standartlarını benimsiyoruz.
                         </p>
                     </div>
