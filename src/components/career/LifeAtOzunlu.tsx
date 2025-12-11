@@ -23,7 +23,7 @@ export default function LifeAtOzunlu() {
                         <p className="text-xl text-gray-300 font-light leading-relaxed">
                             Özünlü ailesi olarak, sadece en iyi damperleri üretmekle kalmıyor,
                             en mutlu çalışanlara sahip olmayı da hedefliyoruz. İnovasyon,
-                            sürekli gelişim ve takım ruhu DNA'mızda var.
+                            sürekli gelişim ve takım ruhu DNA&apos;mızda var.
                         </p>
                     </div>
                     <div className="w-full md:w-1/2">

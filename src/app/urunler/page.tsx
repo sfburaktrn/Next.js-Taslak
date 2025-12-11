@@ -12,7 +12,7 @@ export default function ProductsPage() {
                         İNTERAKTİF <span className="text-primary">DENEYİM</span>
                     </h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Klasik katalogların ötesine geçin. Özünlü Damper'in mühendislik harikası ürünlerini
+                        Klasik katalogların ötesine geçin. Özünlü Damper&apos;in mühendislik harikası ürünlerini
                         360 derece inceleyin ve projenize en uygun konfigürasyonu kendiniz oluşturun.
                     </p>
                 </div>
