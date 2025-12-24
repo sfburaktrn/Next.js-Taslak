@@ -28,8 +28,15 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white drop-shadow-2xl uppercase">
-                        Hızlı Üretimle Gücü Standartlaştırıyoruz
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white drop-shadow-2xl uppercase relative z-10">
+                        <span className="relative inline-block mx-1">
+                            <span className="relative z-10 text-[#000080] drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] px-2">Hızlı</span>
+                        </span>
+                        Üretimle
+                        <span className="relative inline-block mx-1">
+                            <span className="relative z-10 text-[#000080] drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] px-2">Gücü</span>
+                        </span>
+                        Tanımlıyoruz
                     </h1>
                 </motion.div>
 
