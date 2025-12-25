@@ -8,7 +8,7 @@ import Image from 'next/image';
 const products = [
     {
         id: 1,
-        title: 'Yarı Römork Damperi',
+        title: 'Uygun Başlık Gelecek',
         description: 'Hardox çelik gövde, hidrolik sistem, 20-40m³ kapasite',
         icon: Truck,
         capacity: '20-40 m³',
@@ -19,7 +19,7 @@ const products = [
     },
     {
         id: 2,
-        title: 'Çekici Damperi',
+        title: 'Uygun Başlık Gelecek',
         description: 'Yüksek mukavemet, uzun ömür, özel tasarım seçenekleri',
         icon: Package,
         capacity: '15-25 m³',
@@ -30,7 +30,7 @@ const products = [
     },
     {
         id: 3,
-        title: 'Özel Üretim',
+        title: 'Uygun Başlık Gelecek',
         description: 'Müşteri ihtiyaçlarına özel damper çözümleri',
         icon: Settings,
         capacity: 'Özel',
@@ -41,7 +41,7 @@ const products = [
     },
     {
         id: 4,
-        title: 'Havuz Damper',
+        title: 'Uygun Başlık Gelecek',
         description: 'Maksimum dayanıklılık ve estetik tasarım',
         icon: Truck,
         capacity: '24-32 m³',
@@ -52,7 +52,7 @@ const products = [
     },
     {
         id: 5,
-        title: 'Kaya Damper',
+        title: 'Uygun Başlık Gelecek',
         description: 'Zorlu şartlara uygun heavy duty çözümler',
         icon: Package,
         capacity: '20-30 m³',
@@ -63,7 +63,7 @@ const products = [
     },
     {
         id: 6,
-        title: 'Hafriyat Damper',
+        title: 'Uygun Başlık Gelecek',
         description: 'Şehir içi ve şantiye kullanımı için ideal',
         icon: Settings,
         capacity: '18-28 m³',
