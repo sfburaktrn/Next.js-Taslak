@@ -39,6 +39,39 @@ const products = [
         image: '/products/product-new-3.jpg',
         hasSpotlight: true,
     },
+    {
+        id: 4,
+        title: 'Havuz Damper',
+        description: 'Maksimum dayanıklılık ve estetik tasarım',
+        icon: Truck,
+        capacity: '24-32 m³',
+        features: ['Yüksek Performans', 'Aerodinamik', 'Güçlü Şasi'],
+        link: '/products',
+        image: '/products/product-new-4.jpg',
+        hasSpotlight: true,
+    },
+    {
+        id: 5,
+        title: 'Kaya Damper',
+        description: 'Zorlu şartlara uygun heavy duty çözümler',
+        icon: Package,
+        capacity: '20-30 m³',
+        features: ['Heavy Duty', 'Aşınma Direnci', 'Güçlendirilmiş Taban'],
+        link: '/products',
+        image: '/products/product-new-5.png',
+        hasSpotlight: true,
+    },
+    {
+        id: 6,
+        title: 'Hafriyat Damper',
+        description: 'Şehir içi ve şantiye kullanımı için ideal',
+        icon: Settings,
+        capacity: '18-28 m³',
+        features: ['Hızlı Boşaltma', 'Düşük Ağırlık', 'Uzun Ömür'],
+        link: '/products',
+        image: '/products/product-new-6.png',
+        hasSpotlight: true,
+    },
 ];
 
 export default function ProductsSection() {
@@ -194,13 +227,7 @@ export default function ProductsSection() {
                                             </div>
                                         </div>
 
-                                        {/* Capacity Badge - Floating */}
-                                        <div className="absolute top-4 right-4 z-30">
-                                            <span className="inline-flex items-center gap-2 bg-black/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/30 shadow-lg">
-                                                <product.icon size={14} />
-                                                {product.capacity}
-                                            </span>
-                                        </div>
+
                                     </div>
 
                                     {/* Content */}
