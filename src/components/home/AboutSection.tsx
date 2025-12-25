@@ -37,31 +37,24 @@ export default function AboutSection() {
                         </div>
 
                         <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                            GÜCÜN
-                            <br />
-                            <span className="text-white">MÜHENDİSLİK</span> HALİ
+                            Hızlı Üretimle Gücü Tanımlıyoruz
                         </h2>
 
                         <div className="space-y-4 text-gray-300 text-lg leading-relaxed mb-8">
                             <p>
-                                <span className="text-white font-bold">1980 yılından</span> bu yana, Türkiye&apos;nin kalbi Ankara&apos;dan
-                                dünyaya uzanan bir mühendislik hikayesi yazıyoruz.
+                                <span className="text-white font-bold">1977 yılından</span> bu yana, Türkiye’nin kalbi İstanbul’dan dünyaya uzanan üretim gücümüzle; farklı sektörlerin ihtiyaçlarına cevap veren, güvenilir ve uzun ömürlü üst yapı çözümleri sunuyoruz.
                             </p>
-                            <p className="flex items-center flex-wrap gap-2">
+                            <p>
                                 <Image
                                     src="/hardox-logo.png"
                                     alt="Hardox"
                                     width={120}
                                     height={30}
-                                    className="inline-block rounded-lg w-20 md:w-[120px] h-auto"
+                                    className="inline-block rounded-lg w-20 md:w-[120px] h-auto mr-2 align-middle"
                                 />
-                                çelik işleme teknolojisinde <span className="text-white font-bold">öncü</span> konumumuzla,
-                                her damper sadece bir ürün değil, dayanıklılığın ve gücün sembolüdür.
+                                çeliğin sunduğu yüksek mukavemeti, hızlı ve kontrollü üretim süreçlerimizle birleştiriyor; her ürünü yalnızca bir araç üst yapısı değil, operasyonel verimliliği artıran bir sistem olarak ele alıyoruz.
                             </p>
-                            <p>
-                                <span className="text-white font-bold">Ar-Ge merkezimiz</span> ve <span className="text-white font-bold">robotik üretim hatlarımızla</span> yarının
-                                teknolojisini bugün üretiyoruz.
-                            </p>
+
                         </div>
 
                         <motion.a

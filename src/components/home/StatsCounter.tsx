@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 
 const stats = [
-    { label: 'Üretim Üssü', value: 3, suffix: '' },
+
     { label: 'İhracat Ülkesi', value: 50, suffix: '+' },
     { label: 'Yıllık Çelik İşleme (Ton)', value: 12000, suffix: '' },
     { label: 'Yıllık Tecrübe', value: 45, suffix: '' },
@@ -141,7 +141,7 @@ export default function StatsCounter() {
             <div className="container mx-auto px-4 relative z-10" onMouseMove={(e) => {
                 // Optional: Localize mouse tracking to this container if we don't use window listener
             }}>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
