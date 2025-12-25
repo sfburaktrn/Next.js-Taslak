@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 
 const milestones = [
-    { year: '1980', title: 'İlk Kıvılcım', desc: 'Ankara Ostim’de 50m2’lik atölye kuruluşu.' },
-    { year: '1995', title: 'Seri Üretim', desc: 'İlk hidrolik damper seri üretim bandının devreye alınması.' },
-    { year: '2005', title: 'Global Açılım', desc: 'Ortadoğu ve Balkanlara ilk ihracatın gerçekleştirilmesi.' },
-    { year: '2015', title: 'Ar-Ge Merkezi', desc: 'Sanayi Bakanlığı onaylı Ar-Ge merkezinin kuruluşu.' },
-    { year: '2023', title: 'Endüstri 4.0', desc: 'Tam otomasyonlu robotik kaynak hattının açılışı.' },
+    { year: '1980', title: 'Lorem Ipsum', desc: 'Dolor sit amet consectetur adipiscing elit.' },
+    { year: '1995', title: 'Sed Do Eiusmod', desc: 'Tempor incididunt ut labore et dolore magna aliqua.' },
+    { year: '2005', title: 'Ut Enim', desc: 'Ad minim veniam quis nostrud exercitation ullamco.' },
+    { year: '2015', title: 'Duis Aute', desc: 'Irure dolor in reprehenderit in voluptate velit.' },
+    { year: '2023', title: 'Excepteur Sint', desc: 'Occaecat cupidatat non proident sunt in culpa.' },
 ];
 
 export default function Timeline() {

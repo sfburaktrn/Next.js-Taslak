@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 const locations = [
-    { name: 'Ankara Merkez Fabrika', specs: '15.000 m2 • Ar-Ge & Yönetim' },
-    { name: 'Eskişehir Üretim Üssü', specs: '25.000 m2 • Şasi & Gövde Üretimi' },
-    { name: 'Aksaray Montaj Tesisi', specs: '10.000 m2 • Boya & Montaj' },
+    { name: 'Lorem Ipsum', specs: 'Dolor sit amet' },
+    { name: 'Consectetur', specs: 'Adipiscing elit' },
+    { name: 'Sed Do Eiusmod', specs: 'Tempor incididunt' },
 ];
 
 export default function FacilitiesMap() {
@@ -13,7 +13,7 @@ export default function FacilitiesMap() {
         <section className="py-24 bg-ozunlu-900 border-t border-white/5">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 text-center">
-                    ÜRETİM <span className="text-white">GÜCÜMÜZ</span>
+                    LOREM <span className="text-white">IPSUM</span>
                 </h2>
 
                 <div className="flex flex-col md:flex-row gap-8 items-center justify-center">

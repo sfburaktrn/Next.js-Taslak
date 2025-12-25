@@ -12,7 +12,7 @@ export default function VisionManifesto() {
                     viewport={{ once: true }}
                     className="text-4xl md:text-6xl font-black mb-12 tracking-tighter"
                 >
-                    KLASİK BİR &quot;HAKKIMIZDA&quot; YAZISINDAN <span className="text-white">FAZLASI</span>
+                    LOREM IPSUM DOLOR SIT AMET <span className="text-white">CONSECTETUR</span>
                 </motion.h1>
 
                 <motion.div
@@ -23,16 +23,13 @@ export default function VisionManifesto() {
                     className="space-y-8 text-lg md:text-xl text-gray-300 font-light leading-relaxed"
                 >
                     <p>
-                        1980 yılında küçük bir atölyede yanan o ilk kaynak kıvılcımı, bugün
-                        3 kıtada, 50’den fazla ülkede ağır sanayinin yükünü taşıyan dev bir güce dönüştü.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <p>
-                        Biz sadece damper üretmiyoruz. Biz, inşaat devlerinin projelerini zamanında
-                        yetiştirmesini sağlayan hızı, maden ocaklarının zorlu şartlarına direnen
-                        dayanıklılığı ve lojistik sektörünün kârlılığını artıran mühendisliği tasarlıyoruz.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
                     <p className="text-white font-semibold">
-                        Özünlü Damper, çeliğe sadece şekil vermiyor; ona bir karakter, bir misyon yüklüyor.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </motion.div>
             </div>
