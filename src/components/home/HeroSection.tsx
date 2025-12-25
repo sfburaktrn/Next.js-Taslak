@@ -47,7 +47,7 @@ export default function HeroSection() {
                     className="mt-6 max-w-2xl"
                 >
                     <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">
-                        Zamanında üretim, uzun ömürlü damperler ve sahada güven veren performans
+                        Zamanında üretim, uzun ömürlü üst yapı çözümleri ve sahada güven veren performans
                     </p>
                 </motion.div>
             </div>

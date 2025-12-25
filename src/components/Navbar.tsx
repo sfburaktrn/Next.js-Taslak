@@ -3,23 +3,22 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe, Sun, Moon } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [lang, setLang] = useState('TR');
-    const [isDark, setIsDark] = useState(true);
+    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+    const toggleLangMenu = () => setIsLangMenuOpen(!isLangMenuOpen);
+    const selectLang = (language: string) => {
+        setLang(language);
+        setIsLangMenuOpen(false);
+    };
 
     useEffect(() => {
-        // Initial check or preference logic could go here
-        if (typeof document !== 'undefined' && document.documentElement.classList.contains('dark')) {
-            setIsDark(true);
-        } else {
-            setIsDark(false);
-        }
-
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
@@ -38,15 +37,7 @@ export default function Navbar() {
         };
     }, [mobileMenuOpen]);
 
-    const toggleTheme = () => {
-        if (isDark) {
-            document.documentElement.classList.remove('dark');
-            setIsDark(false);
-        } else {
-            document.documentElement.classList.add('dark');
-            setIsDark(true);
-        }
-    };
+
 
     const navLinks = [
         { href: "/kurumsal", label: "KURUMSAL" },
@@ -89,30 +80,40 @@ export default function Navbar() {
 
                     {/* Language & Theme Controls */}
                     <div className="flex items-center gap-4 border-l border-white/20 pl-6 ml-2">
-                        {/* Theme Toggle */}
-                        <button
-                            onClick={toggleTheme}
-                            className="text-gray-400 hover:text-white transition-colors"
-                        >
-                            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+
 
                         {/* Language */}
-                        <div className="flex items-center gap-2">
-                            <Globe size={16} className="text-white" />
+                        {/* Language */}
+                        <div className="relative">
                             <button
-                                onClick={() => setLang('TR')}
-                                className={`text-xs font-bold transition-colors ${lang === 'TR' ? 'text-white' : 'text-gray-500 hover:text-white'}`}
+                                onClick={toggleLangMenu}
+                                className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors"
                             >
-                                TR
+                                <Globe size={18} />
+                                <span className="text-sm font-bold">{lang}</span>
+                                <ChevronDown size={14} className={`transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
                             </button>
-                            <span className="text-gray-600 text-[10px]">|</span>
-                            <button
-                                onClick={() => setLang('EN')}
-                                className={`text-xs font-bold transition-colors ${lang === 'EN' ? 'text-white' : 'text-gray-500 hover:text-white'}`}
-                            >
-                                EN
-                            </button>
+
+                            <AnimatePresence>
+                                {isLangMenuOpen && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        className="absolute right-0 mt-2 w-24 bg-black border border-white/20 rounded-lg shadow-xl overflow-hidden py-1 z-50"
+                                    >
+                                        {['TR', 'EN'].map((l) => (
+                                            <button
+                                                key={l}
+                                                onClick={() => selectLang(l)}
+                                                className={`w-full text-left px-4 py-2 text-sm font-bold hover:bg-white/10 transition-colors ${lang === l ? 'text-primary' : 'text-white'}`}
+                                            >
+                                                {l}
+                                            </button>
+                                        ))}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
@@ -172,28 +173,38 @@ export default function Navbar() {
 
                                 {/* Quick actions (theme + language) */}
                                 <div className="px-6 py-4 bg-black border-b border-white/10 flex items-center justify-between gap-4">
-                                    <button
-                                        onClick={toggleTheme}
-                                        className="flex items-center gap-2 text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
-                                    >
-                                        {isDark ? <><Sun size={18} /> Aydınlık Mod</> : <><Moon size={18} /> Karanlık Mod</>}
-                                    </button>
+
                                     <div className="flex items-center gap-3 text-white">
-                                        <Globe size={18} className="text-white" />
-                                        <div className="flex items-center gap-2">
+                                        <div className="relative">
                                             <button
-                                                onClick={() => setLang('TR')}
-                                                className={`text-sm font-black ${lang === 'TR' ? 'text-white' : 'text-gray-400'}`}
+                                                onClick={toggleLangMenu}
+                                                className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors px-3 py-2 rounded-lg bg-white/5"
                                             >
-                                                TR
+                                                <Globe size={18} />
+                                                <span className="text-sm font-bold">{lang}</span>
+                                                <ChevronDown size={14} className={`transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
                                             </button>
-                                            <span className="text-gray-600">/</span>
-                                            <button
-                                                onClick={() => setLang('EN')}
-                                                className={`text-sm font-black ${lang === 'EN' ? 'text-white' : 'text-gray-400'}`}
-                                            >
-                                                EN
-                                            </button>
+
+                                            <AnimatePresence>
+                                                {isLangMenuOpen && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: 10 }}
+                                                        className="absolute left-0 mt-2 w-full min-w-[100px] bg-white/10 border border-white/20 rounded-lg shadow-xl overflow-hidden py-1 z-50"
+                                                    >
+                                                        {['TR', 'EN'].map((l) => (
+                                                            <button
+                                                                key={l}
+                                                                onClick={() => selectLang(l)}
+                                                                className={`w-full text-left px-4 py-2 text-sm font-bold hover:bg-white/10 transition-colors ${lang === l ? 'text-primary' : 'text-white'}`}
+                                                            >
+                                                                {l}
+                                                            </button>
+                                                        ))}
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </div>
                                     </div>
                                 </div>

@@ -46,7 +46,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
 
     const runSequence = async () => {
       // 1. Initial Delay
-      await new Promise(r => setTimeout(r, 500));
+      await new Promise(r => setTimeout(r, 300));
 
       // 2. Right Light
       const audio1 = new Audio('/sounds/light-switch.mp3');
@@ -55,7 +55,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
       setRightLightOn(true);
 
       // 3. Short Delay
-      await new Promise(r => setTimeout(r, 600));
+      await new Promise(r => setTimeout(r, 400));
 
       // 4. Left Light
       const audio2 = new Audio('/sounds/light-switch.mp3');
@@ -63,14 +63,11 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
       audio2.play().catch(e => console.log('Audio play failed', e));
       setLeftLightOn(true);
 
-      // 5. Short Delay before Damper
+      // 5. Short Delay before Damper (conceptually)
       await new Promise(r => setTimeout(r, 300));
 
-      // 6. Show Damper
-      // setShowCenter(true); // Disable damper
-
       // 7. Hold before finishing
-      await new Promise(r => setTimeout(r, 2000)); // Reduced wait time since damper is gone
+      await new Promise(r => setTimeout(r, 1500)); // Reduced wait time
 
       // 8. Complete
       onComplete();
@@ -78,10 +75,10 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
 
     runSequence();
 
-    // Fallback: If anything stucks, force complete after 7 seconds
+    // Fallback: If anything stucks, force complete after 4 seconds
     timer = setTimeout(() => {
       onComplete();
-    }, 7000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
