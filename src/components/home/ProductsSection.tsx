@@ -109,7 +109,7 @@ export default function ProductsSection() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-black text-white mb-6"
                     >
-                        DAMPER <span className="text-white">ÇÖZÜMLERİ</span>
+                        ÜST YAPI <span className="text-white">ÇÖZÜMLERİ</span>
                     </motion.h2>
 
                     <motion.p
@@ -119,7 +119,7 @@ export default function ProductsSection() {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 text-lg max-w-2xl mx-auto"
                     >
-                        Her ihtiyaca uygun, Hardox çelik kalitesinde damper sistemleri
+                        Her ihtiyaca uygun, Hardox çelik kalitesinde üst yapı çözümleri
                     </motion.p>
                 </div>
 
