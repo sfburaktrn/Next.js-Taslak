@@ -27,7 +27,7 @@ export default function CorporateHero() {
                     transition={{ duration: 1 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full border border-white/20 bg-white/5 text-xs font-bold tracking-[0.2em] text-gray-300 mb-6 backdrop-blur-sm uppercase">
-                        1977'den Beri
+                        1977&apos;den Beri
                     </span>
                     <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-tight">
                         HIZIN VE GÜVENİN <br />

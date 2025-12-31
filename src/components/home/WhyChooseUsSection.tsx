@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 // Using standard img tag for debugging stability as requested
-// import Image from 'next/image';
+import Image from 'next/image';
 
 const features = [
     'Araç üreticilerinin üst yapı talimatlarına uygun üretim',
@@ -148,10 +148,11 @@ export default function WhyChooseUsSection() {
                                         }}
                                         className="absolute inset-0 rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl bg-ozunlu-900"
                                     >
-                                        <img
+                                        <Image
                                             src={img}
                                             alt={`Why Choose Us ${index + 1}`}
-                                            className="object-cover w-full h-full"
+                                            fill
+                                            className="object-cover"
                                         />
 
                                         {/* Label only visible on front card */}
