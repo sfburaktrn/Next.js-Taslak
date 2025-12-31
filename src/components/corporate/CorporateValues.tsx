@@ -1,0 +1,56 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Shield, Award, Lightbulb, Zap } from 'lucide-react';
+
+const values = [
+    {
+        icon: Shield,
+        title: 'GÜVEN',
+        desc: '45 yılı aşkın süredir müşterilerimize, iş ortaklarımıza ve çalışanlarımıza verdiğimiz her sözün arkasındayız.'
+    },
+    {
+        icon: Award,
+        title: 'KALİTE',
+        desc: 'Hardox çelikten en ince işçiliğe kadar, üretimimizin her aşamasında mükemmelliği hedefliyoruz.'
+    },
+    {
+        icon: Lightbulb,
+        title: 'İNOVASYON',
+        desc: 'Sektörün ihtiyaçlarını analiz ediyor, AR-GE çalışmalarımızla geleceğin teknolojilerini bugüne taşıyoruz.'
+    },
+    {
+        icon: Zap,
+        title: 'HIZ',
+        desc: 'Optimize edilmiş üretim süreçlerimizle, kaliteden ödün vermeden en kısa sürede teslimat sağlıyor; işinize hız katıyoruz.'
+    }
+];
+
+export default function CorporateValues() {
+    return (
+        <section className="py-24 bg-ozunlu-950 relative">
+            <div className="container mx-auto px-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {values.map((item, index) => (
+                        <motion.div
+                            key={item.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group p-8 border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] rounded-2xl transition-all duration-500 hover:border-primary/30"
+                        >
+                            <div className="w-14 h-14 bg-primary text-white rounded-xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(255,255,255,0.15)] group-hover:scale-110 transition-transform duration-300">
+                                <item.icon size={28} />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-4 tracking-wide">{item.title}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4 group-hover:border-white/10 transition-colors">
+                                {item.desc}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

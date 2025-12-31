@@ -43,7 +43,6 @@ export default function Navbar() {
         { href: "/kurumsal", label: "KURUMSAL" },
         { href: "/urunler", label: "ÜRÜNLER" },
         { href: "/cozumler", label: "ÇÖZÜMLER" },
-        { href: "/teknoloji", label: "TEKNOLOJİ" },
         { href: "/medya", label: "MEDYA" },
         { href: "/kariyer", label: "KARİYER" },
         { href: "/iletisim", label: "İLETİŞİM" },

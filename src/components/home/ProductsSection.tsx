@@ -8,7 +8,7 @@ import Image from 'next/image';
 const products = [
     {
         id: 1,
-        title: 'Uygun Başlık Gelecek',
+        title: 'DAMPER',
         description: 'Hardox çelik gövde, hidrolik sistem, 20-40m³ kapasite',
         icon: Truck,
         capacity: '20-40 m³',
@@ -19,7 +19,7 @@ const products = [
     },
     {
         id: 2,
-        title: 'Uygun Başlık Gelecek',
+        title: 'DORSE',
         description: 'Yüksek mukavemet, uzun ömür, özel tasarım seçenekleri',
         icon: Package,
         capacity: '15-25 m³',
@@ -30,7 +30,7 @@ const products = [
     },
     {
         id: 3,
-        title: 'Uygun Başlık Gelecek',
+        title: 'KAR KÜREME',
         description: 'Müşteri ihtiyaçlarına özel damper çözümleri',
         icon: Settings,
         capacity: 'Özel',
@@ -125,7 +125,7 @@ export default function ProductsSection() {
 
                 {/* Products Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {products.map((product, index) => (
+                    {products.slice(0, 3).map((product, index) => (
                         <motion.div
                             key={product.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -135,7 +135,7 @@ export default function ProductsSection() {
                             whileHover={{ y: -8 }}
                             className="group relative"
                         >
-                            <Link href={product.link} className="block h-full">
+                            <Link href="/urunler" className="block h-full">
                                 <div className="relative h-full rounded-2xl overflow-hidden group cursor-pointer">
                                     {/* Animated Gradient Background Lights */}
                                     {product.hasSpotlight && (
@@ -233,9 +233,19 @@ export default function ProductsSection() {
                                     {/* Content */}
                                     <div className="relative z-10 p-6">
                                         {/* Title */}
-                                        <h3 className="text-2xl font-black text-white mb-2 group-hover:text-white transition-colors">
-                                            {product.title}
-                                        </h3>
+                                        <div className="flex items-center gap-2 mb-2 group-hover:translate-x-1 transition-transform">
+                                            <div className="relative w-20 h-5">
+                                                <Image
+                                                    src="/ozunlu-logo.png"
+                                                    alt="Özünlü"
+                                                    fill
+                                                    className="object-contain object-left"
+                                                />
+                                            </div>
+                                            <h3 className="text-xl font-black text-white group-hover:text-white transition-colors pt-0.5">
+                                                {product.title}
+                                            </h3>
+                                        </div>
 
                                         {/* Description */}
                                         <p className="text-gray-400 mb-4 leading-relaxed text-sm">
@@ -292,10 +302,10 @@ export default function ProductsSection() {
                     className="text-center"
                 >
                     <Link
-                        href="/products"
+                        href="/urunler"
                         className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40"
                     >
-                        Tüm Ürünleri Görüntüle
+                        TÜM ÜRÜNLER
                         <ArrowRight size={20} />
                     </Link>
                 </motion.div>

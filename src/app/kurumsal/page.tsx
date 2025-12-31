@@ -1,12 +1,14 @@
-import VisionManifesto from '@/components/corporate/VisionManifesto';
+import CorporateHero from '@/components/corporate/CorporateHero';
+import CorporateValues from '@/components/corporate/CorporateValues';
 import LeaderMessage from '@/components/corporate/LeaderMessage';
 import Timeline from '@/components/corporate/Timeline';
 import FacilitiesMap from '@/components/corporate/FacilitiesMap';
 
 export default function CorporatePage() {
     return (
-        <main className="pt-24 min-h-screen bg-ozunlu-950">
-            <VisionManifesto />
+        <main className="min-h-screen bg-ozunlu-950">
+            <CorporateHero />
+            <CorporateValues />
             <LeaderMessage />
             <Timeline />
             <FacilitiesMap />

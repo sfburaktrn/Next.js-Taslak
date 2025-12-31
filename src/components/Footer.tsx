@@ -8,7 +8,6 @@ const quickLinks = [
     { href: "/kurumsal", label: "Kurumsal" },
     { href: "/urunler", label: "Ürünler" },
     { href: "/cozumler", label: "Çözümler" },
-    { href: "/teknoloji", label: "Teknoloji" },
     { href: "/medya", label: "Medya" },
     { href: "/kariyer", label: "Kariyer" },
     { href: "/iletisim", label: "İletişim" },
