@@ -19,9 +19,9 @@ const features = [
 
 // Correct image paths mapped to the public/products directory
 const images = [
-    '/products/why-choose-1.jpg',
-    '/products/why-choose-2.jpg',
-    '/products/why-choose-3.jpg',
+    '/products/product-new-1.jpg',
+    '/products/product-new-6.png',
+    '/products/product-new-2.jpg',
 ];
 
 export default function WhyChooseUsSection() {
