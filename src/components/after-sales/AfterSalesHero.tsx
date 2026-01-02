@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AfterSalesHero() {
     return (
-        <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center bg-ozunlu-950">
+        <section className="relative h-[85vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center bg-ozunlu-950">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
                 <div

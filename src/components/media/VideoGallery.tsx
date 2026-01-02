@@ -40,26 +40,6 @@ export default function VideoGallery() {
                         </button>
                     </div>
                 </div>
-
-                {/* Video Strip */}
-                <h4 className="text-white font-bold mb-6 text-xl">Sizin İçin Seçtiklerimiz</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {videos.map((vid, i) => (
-                        <div key={i} className="group cursor-pointer">
-                            <div className="relative aspect-video bg-ozunlu-800 rounded-lg overflow-hidden mb-3 border border-white/5 group-hover:border-primary/50 transition-all">
-                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                                    <Play size={30} className="text-white fill-white" />
-                                </div>
-                                <div className="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-1 rounded font-bold">
-                                    {vid.duration}
-                                </div>
-                            </div>
-                            <h5 className="text-gray-200 font-bold group-hover:text-white transition-colors text-sm">
-                                {vid.title}
-                            </h5>
-                        </div>
-                    ))}
-                </div>
             </div>
         </section>
     );
