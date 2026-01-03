@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import SmoothScroll from '@/components/common/SmoothScroll'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -24,9 +25,11 @@ export default function RootLayout({
     return (
         <html lang="tr" className="dark">
             <body className={manrope.className}>
-                <Navbar />
-                {children}
-                <Footer />
+                <SmoothScroll>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                </SmoothScroll>
             </body>
         </html>
     )
